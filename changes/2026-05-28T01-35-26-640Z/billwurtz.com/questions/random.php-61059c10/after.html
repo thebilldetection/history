@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>questions</title>
+<style>
+
+p.right {
+    text-align: right;
+}
+dco {color:#E9EC54;}
+rco {color:#ff6600;}
+qco {color:#B387FF;}
+green {color: #00cc00;}
+backtonormal {color: #00ccff;}
+lightred {color: ##ff6666;}
+lightgreen {color: #b3ffb3;}
+.alignright {
+	float: right;
+}
+.alignleft {
+	float: left;
+}
+
+    
+a {color:#00FF00}
+a:visited{color:#67FF79}
+    
+</style>	
+<meta name="viewport" content="width=device-width, initial-scale=1.0,"/>
+</head>
+    
+<body style="word-wrap: break-word;" bgcolor=#323232 text=white>
+
+
+<!--<h1>ue<font color=#00EE3B><A HREF="most-popular-questions.html"style="text-decoration:none;">q</a></font>stions</h1>-->
+   
+            <script type="text/javascript">
+   // after this many characters, enter will go back to working normally.
+    var CHARACTERS_TO_DISALLOW_ENTER = 50;
+          
+    var question_submitted_already = false;     
+    function submit_question() {
+        if (question_submitted_already == false) 
+        {
+            question_submitted_already = true;
+            document.forms["ask"].submit(); 
+            document.forms["ask"].reset(); 
+        }
+    }
+        
+
+        
+    function on_press(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        
+        // if its a mobile device it will have a "orientation" field, so check for that 
+         if (!(typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
+            // if user presses enter and is not holding down shift, submit question
+            if (code == 13 && !e.shiftKey) { 
+        
+                submit_question(); 
+                e.preventDefault();
+
+            }
+         }
+    }
+// reset the page when the back/foward cache is active. 
+// allows questions to be submitted after back is pressed on 
+// some browsers *ahem*safari
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    window.location.reload() 
+  }
+};
+    </script>
+<span class="alignright"><form action="questions.html">
+        
+        
+<input type="submit" value="back to normal" style="
+	background-color:black;
+	color: #00ccff;
+	font-size:9px;
+	width:85px;
+">  </form></span>
+   <!-- <p class="right">
+    <a href="questions.html">normal mode</a></p>-->
+<form action="questions.php" method="post" name="ask">
+
+<textarea rows="2" cols="15" maxlength="10000" name="question"onkeypress="on_press(event, this)"></textarea>
+
+
+</br><input type="hidden" name="location" value="random" />
+<input type="button" onclick="submit_question();" value="ASK"/> </form>
+</br>
+<h3><dco>8.2.20&nbsp; 
+1:03 pm</dco> &nbsp;<qco> Have you ever thought about how many different shades of green there are?</qco></h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yes<h3><qco> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If so, how many do you believe there are?&nbsp;</qco> </h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;infinite
+
+</br></br><h3> 
+
+
+     <form method="GET">
+        
+        
+<input type="submit" value="RANDOM QUESTION" style="
+	background-color:black;
+	color: red;
+	font-size:14px;
+	width:180px;
+">  </form>
+        
+  
+
+</body>
+</html>
